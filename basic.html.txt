@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Basic - Primordia Lab</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<h2>Level 1 – Basic</h2>
+<p>Explore the 3D Animal Cell Model</p>
+
+<div class="embed-container">
+<iframe title="Animal Cell"
+frameborder="0"
+allowfullscreen
+allow="autoplay; fullscreen; xr-spatial-tracking"
+src="https://sketchfab.com/models/abaa9a651c834cdaa67072b32fb0024f/embed">
+</iframe>
+</div>
+
+<a class="back-btn" href="index.html">Back</a>
+
+</body>
+</html>

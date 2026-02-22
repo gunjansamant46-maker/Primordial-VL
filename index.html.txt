@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Primordia Lab</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<main class="center-box">
+    <h1>Primordia Lab</h1>
+    <p class="subtitle">Virtual Biology Simulation Platform</p>
+
+    <nav class="level-buttons">
+        <a href="basic.html" class="btn">Basic</a>
+        <a href="intermediate.html" class="btn">Intermediate</a>
+        <a href="advanced.html" class="btn">Advanced</a>
+    </nav>
+</main>
+
+<footer>
+    <p><strong>Curated by Gunjan & Maitreyi</strong></p>
+    <p>Special Thanks to Ms. Kiran Bisht</p>
+</footer>
+
+</body>
+</html>

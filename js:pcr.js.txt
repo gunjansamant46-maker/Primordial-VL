@@ -1,0 +1,9 @@
+function showDemo() {
+    document.getElementById("demo-section").style.display = "block";
+    document.getElementById("manual-section").style.display = "none";
+}
+
+function showManual() {
+    document.getElementById("demo-section").style.display = "none";
+    document.getElementById("manual-section").style.display = "block";
+}
