@@ -70,3 +70,21 @@ footer {
     font-size: 14px;
     color: #C9A227;
 }
+.embed-container {
+    margin: 30px auto;
+}
+
+.embed-container iframe {
+    width: 80%;
+    height: 500px;
+    border-radius: 12px;
+}
+
+.info-box {
+    background-color: #0B1320;
+    padding: 20px;
+    border-radius: 10px;
+    width: 60%;
+    margin: 30px auto;
+    text-align: left;
+}
