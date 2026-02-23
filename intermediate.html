@@ -1,23 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Intermediate</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intermediate - Primordia Lab</title>
 <link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
 </head>
 
 <body>
 
-<h2>Intermediate Modules</h2>
+<h1>Intermediate Level</h1>
 
-<div class="module-grid">
-<a href="#">Foetal Development In Human</a>
-<a href="#">Structure Of DNA</a>
-<a href="#">Ultrastructure Of Nephron</a>
-<a href="#">Skeletal System</a>
+<div class="tab-buttons">
+    <button onclick="showNephron()">Ultrastructure of Nephron</button>
+    <button onclick="showGenetic()">Genetic Material</button>
+    <button onclick="showSkeleton()">Human Skeletal System</button>
 </div>
 
-<a href="index.html" class="back-btn">Back</a>
+<!-- ================= NEPHRON ================= -->
+
+<div id="nephron" class="module hidden">
+    <h2>Ultrastructure of Nephron</h2>
+    <iframe 
+        src="https://sketchfab.com/models/898146d60a0741c6ac9910210e4eac20/embed"
+        allowfullscreen
+        frameborder="0">
+    </iframe>
+</div>
+
+<!-- ================= GENETIC MATERIAL ================= -->
+
+<div id="genetic" class="module hidden">
+    <h2>Chromosome Structure</h2>
+    <iframe 
+        src="https://sketchfab.com/models/cc33bb1ebe6141b08d0d06f1bbebc2b7/embed"
+        allowfullscreen
+        frameborder="0">
+    </iframe>
+</div>
+
+<!-- ================= SKELETAL SYSTEM ================= -->
+
+<div id="skeleton" class="module hidden">
+    <h2>Human Skeletal System</h2>
+    <iframe 
+        src="https://sketchfab.com/models/a16faac00e9944f7a80ed390844e221f/embed"
+        allowfullscreen
+        frameborder="0">
+    </iframe>
+</div>
+
+<a href="index.html" class="back-btn">Back to Home</a>
 
 </body>
 </html>
