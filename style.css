@@ -1,90 +1,71 @@
 body {
-    background-color: #0F172A;
-    font-family: 'Poppins', sans-serif;
-    color: #F8F5F0;
-    text-align: center;
-    margin: 0;
-    padding: 40px;
+background: #0F172A;
+color: #F8F5F0;
+font-family: Poppins, sans-serif;
+margin: 0;
+padding: 30px;
+text-align: center;
 }
 
-h1, h2, h3 {
-    font-weight: 500;
+header {
+margin-bottom: 40px;
 }
 
-.center-box {
-    margin-top: 100px;
+.level-grid {
+display: flex;
+justify-content: center;
+gap: 30px;
 }
 
-.level-buttons a {
-    display: inline-block;
-    margin: 15px;
-    padding: 10px 25px;
-    background: #0B1320;
-    color: #F8F5F0;
-    text-decoration: none;
-    border-radius: 8px;
+.card {
+background: #0B1320;
+padding: 20px 40px;
+border-radius: 10px;
+color: white;
+text-decoration: none;
 }
 
-.level-buttons a:hover {
-    background: #D4A017;
-    color: #0F172A;
+.card:hover {
+background: #D4A017;
+color: #0F172A;
 }
 
-.embed-container iframe {
-    width: 80%;
-    height: 500px;
-    border-radius: 12px;
+.dual-frame {
+display: flex;
+gap: 20px;
+justify-content: center;
+margin-bottom: 40px;
 }
 
-.simulation-box {
-    background-color: #0B1320;
-    padding: 25px;
-    border-radius: 12px;
-    margin: 20px auto;
-    width: 60%;
+iframe {
+width: 45%;
+height: 400px;
+border-radius: 12px;
 }
 
-button {
-    margin: 8px;
-    padding: 8px 20px;
-    border: none;
-    border-radius: 6px;
-    background: #D4A017;
-    color: #0F172A;
-    cursor: pointer;
-}
-
-button:hover {
-    opacity: 0.85;
+.module-grid {
+display: grid;
+gap: 15px;
+max-width: 600px;
+margin: auto;
 }
 
 .back-btn {
-    display: inline-block;
-    margin-top: 30px;
-    color: #D4A017;
-    text-decoration: none;
+display: inline-block;
+margin-top: 30px;
+color: #D4A017;
+text-decoration: none;
 }
 
 footer {
-    margin-top: 80px;
-    font-size: 14px;
-    color: #C9A227;
-}
-.embed-container {
-    margin: 30px auto;
+margin-top: 60px;
 }
 
-.embed-container iframe {
-    width: 80%;
-    height: 500px;
-    border-radius: 12px;
+.footer-logo {
+width: 150px;
+margin-bottom: 15px;
 }
 
-.info-box {
-    background-color: #0B1320;
-    padding: 20px;
-    border-radius: 10px;
-    width: 60%;
-    margin: 30px auto;
-    text-align: left;
+.hidden {
+display: none;
 }
