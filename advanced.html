@@ -2,50 +2,47 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Advanced - Primordia Lab</title>
+<title>Advanced</title>
 <link rel="stylesheet" href="style.css">
-<script src="pcr.js"></script>
+<script src="script.js"></script>
 </head>
+
 <body>
 
-<h2>Level 3 – Advanced</h2>
+<h2>Advanced Lab</h2>
 
 <div class="tab-buttons">
-    <button onclick="showDemo()">Demo</button>
-    <button onclick="showManual()">Manual PCR</button>
+<button onclick="showDemo()">Demo</button>
+<button onclick="showGuided()">Guided Simulation</button>
+<button onclick="showFree()">Free Simulation</button>
 </div>
 
-<div id="demo-section">
-    <h3>DNA Replication Demo</h3>
-    <div class="embed-container">
-    <iframe title="DNA Replication Model"
-    frameborder="0"
-    allowfullscreen
-    allow="autoplay; fullscreen; xr-spatial-tracking"
-    src="https://sketchfab.com/models/3122da8323374eb5bf9ed4736c0de563/embed">
-    </iframe>
-    </div>
+<div id="demo">
+<ul>
+<li>DNA Replication</li>
+<li>Protein Folding</li>
+<li>tRNA Mechanism</li>
+<li>CRISPR</li>
+</ul>
 </div>
 
-<div id="manual-section" style="display:none;">
-    <h3>PCR Manual Simulation</h3>
-
-    <div class="simulation-box">
-        <div id="temperature">Temperature: -- °C</div>
-        <div id="dna-visual">🧬</div>
-        <div id="description">Click Start to begin PCR cycle.</div>
-    </div>
-
-    <div class="controls">
-        <button onclick="startPCR()">Start</button>
-        <button onclick="denaturation()">Denaturation</button>
-        <button onclick="annealing()">Annealing</button>
-        <button onclick="extension()">Extension</button>
-        <button onclick="resetPCR()">Reset</button>
-    </div>
+<div id="guided" class="hidden">
+<ul>
+<li>PCR (Guided)</li>
+<li>Gel Electrophoresis (Guided)</li>
+<li>Rapid Diagnostic Test (Guided)</li>
+</ul>
 </div>
 
-<a class="back-btn" href="index.html">Back</a>
+<div id="free" class="hidden">
+<ul>
+<li>PCR (Free Hand)</li>
+<li>Gel Electrophoresis (Free Hand)</li>
+<li>RDT (Free Hand)</li>
+</ul>
+</div>
+
+<a href="index.html" class="back-btn">Back</a>
 
 </body>
 </html>
