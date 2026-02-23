@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Basic Level - Primordia Lab</title>
+<title>Basic - Eurica</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -11,53 +12,31 @@
 
 <h1>Basic Level</h1>
 
-<!-- ================= BUTTON PANEL ================= -->
+<h2>Animal Cell vs Plant Cell</h2>
 
-<div class="module-grid">
+<div class="comparison-frame">
 
-    <button onclick="showSection('animal')">Animal Cell</button>
-    <button onclick="showSection('plant')">Plant Cell</button>
-    <button onclick="showSection('flower')">Reproductive Parts in Plants</button>
+    <div class="model-box">
+        <h3>Animal Cell</h3>
+        <iframe src="https://sketchfab.com/models/abaa9a651c834cdaa67072b32fb0024f/embed" allowfullscreen></iframe>
+    </div>
+
+    <div class="model-box">
+        <h3>Plant Cell</h3>
+        <iframe src="https://sketchfab.com/models/e61e7bdf8c8449a583b364f05e70289b/embed" allowfullscreen></iframe>
+    </div>
 
 </div>
 
-<!-- ================= SECTIONS ================= -->
+<h2>Reproductive Parts in Plants</h2>
 
-<div id="animal" class="hidden">
-    <h2>Animal Cell</h2>
-    <iframe 
-        src="https://sketchfab.com/models/abaa9a651c834cdaa67072b32fb0024f/embed"
-        allowfullscreen>
-    </iframe>
-</div>
-
-<div id="plant" class="hidden">
-    <h2>Plant Cell</h2>
-    <iframe 
-        src="https://sketchfab.com/models/e61e7bdf8c8449a583b364f05e70289b/embed"
-        allowfullscreen>
-    </iframe>
-</div>
-
-<div id="flower" class="hidden">
-    <h2>Reproductive Parts in Plants</h2>
-    <iframe 
-        src="https://sketchfab.com/models/4ce0afd091d742e286a0de156e183d95/embed"
-        allowfullscreen>
-    </iframe>
+<div class="single-frame">
+    <div class="model-box full-width">
+        <iframe src="https://sketchfab.com/models/4ce0afd091d742e286a0de156e183d95/embed" allowfullscreen></iframe>
+    </div>
 </div>
 
 <a href="index.html" class="back-btn">Back to Home</a>
-
-<script>
-function showSection(id) {
-    document.getElementById('animal').classList.add('hidden');
-    document.getElementById('plant').classList.add('hidden');
-    document.getElementById('flower').classList.add('hidden');
-
-    document.getElementById(id).classList.remove('hidden');
-}
-</script>
 
 </body>
 </html>
