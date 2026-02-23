@@ -121,3 +121,35 @@ footer {
         height: 350px;
     }
 }
+.tab-buttons {
+    margin: 30px 0;
+}
+
+.tab-buttons button {
+    margin: 10px;
+    padding: 10px 20px;
+    background: #0B1320;
+    color: #F8F5F0;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.tab-buttons button:hover {
+    background: #D4A017;
+    color: #0F172A;
+}
+
+.module {
+    margin-top: 30px;
+}
+
+.module iframe {
+    width: 80%;
+    height: 500px;
+    border-radius: 12px;
+}
+
+.hidden {
+    display: none;
+}
