@@ -1,9 +1,17 @@
 function showDemo() {
-    document.getElementById("demo-section").style.display = "block";
-    document.getElementById("manual-section").style.display = "none";
+document.getElementById("demo").style.display = "block";
+document.getElementById("guided").style.display = "none";
+document.getElementById("free").style.display = "none";
 }
 
-function showManual() {
-    document.getElementById("demo-section").style.display = "none";
-    document.getElementById("manual-section").style.display = "block";
+function showGuided() {
+document.getElementById("demo").style.display = "none";
+document.getElementById("guided").style.display = "block";
+document.getElementById("free").style.display = "none";
+}
+
+function showFree() {
+document.getElementById("demo").style.display = "none";
+document.getElementById("guided").style.display = "none";
+document.getElementById("free").style.display = "block";
 }
