@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DNA Replication - Guided Mode</title>
+<link rel="stylesheet" href="style.css">
+<style>
+#step-controls {
+    margin-top: 20px;
+}
+
+.step-btn {
+    padding: 10px 20px;
+    margin: 8px;
+    border-radius: 10px;
+    border: none;
+    background: #A8D5C2;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#explanation-box {
+    margin: 30px auto;
+    max-width: 800px;
+    padding: 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    text-align: left;
+}
+</style>
+</head>
+<body>
+
+<h1>DNA Replication - Guided Simulation</h1>
+
+<div class="single-frame">
+    <iframe 
+        src="https://sketchfab.com/models/3122da8323374eb5bf9ed4736c0de563/embed"
+        allowfullscreen
+        frameborder="0">
+    </iframe>
+</div>
+
+<div id="step-controls">
+    <button class="step-btn" onclick="showStep(1)">Step 1: Origin</button>
+    <button class="step-btn" onclick="showStep(2)">Step 2: Helicase</button>
+    <button class="step-btn" onclick="showStep(3)">Step 3: Primase</button>
+    <button class="step-btn" onclick="showStep(4)">Step 4: Leading Strand</button>
+    <button class="step-btn" onclick="showStep(5)">Step 5: Lagging Strand</button>
+    <button class="step-btn" onclick="showStep(6)">Free Explore</button>
+</div>
+
+<div id="explanation-box">
+    Click a step to begin the guided simulation.
+</div>
+
+<a href="advanced.html" class="back-btn">Back to Advanced</a>
+
+<script>
+function showStep(step) {
+
+    const box = document.getElementById("explanation-box");
+
+    if(step === 1){
+        box.innerHTML = "<h3>Step 1: Origin of Replication</h3>\
+        DNA replication begins at a specific site called the origin (Ori). \
+        Enzymes recognize this sequence and prepare the DNA for unwinding.";
+    }
+
+    if(step === 2){
+        box.innerHTML = "<h3>Step 2: Helicase Action</h3>\
+        Helicase unwinds the double helix by breaking hydrogen bonds between base pairs. \
+        This forms the replication fork.";
+    }
+
+    if(step === 3){
+        box.innerHTML = "<h3>Step 3: Primer Formation</h3>\
+        Primase synthesizes a short RNA primer (green in the model). \
+        DNA polymerase requires this primer to begin elongation.";
+    }
+
+    if(step === 4){
+        box.innerHTML = "<h3>Step 4: Leading Strand Synthesis</h3>\
+        DNA polymerase synthesizes continuously in the 5' to 3' direction toward the fork. \
+        This forms the leading strand (orange).";
+    }
+
+    if(step === 5){
+        box.innerHTML = "<h3>Step 5: Lagging Strand Synthesis</h3>\
+        The lagging strand (yellow) is synthesized discontinuously \
+        as Okazaki fragments due to opposite orientation.";
+    }
+
+    if(step === 6){
+        box.innerHTML = "<h3>Free Explore Mode</h3>\
+        Rotate, zoom, and explore the 3D model freely. \
+        Observe enzyme positions, strand directions, and fork structure.";
+    }
+
+}
+</script>
+
+</body>
+</html>
