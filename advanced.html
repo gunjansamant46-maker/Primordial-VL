@@ -1,50 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Advanced</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced - Eurica</title>
 <link rel="stylesheet" href="style.css">
 <script src="script.js"></script>
 </head>
 
 <body>
 
-<h2>Advanced Lab</h2>
+<h1>Advanced Level</h1>
 
 <div class="tab-buttons">
-<button onclick="showDemo()">Demo</button>
-<button onclick="showGuided()">Guided Simulation</button>
-<button onclick="showFree()">Free Simulation</button>
+    <button onclick="showDemo()">Demo</button>
+    <button onclick="showGuided()">Guided</button>
+    <button onclick="showFree()">Free Simulation</button>
 </div>
 
-<div id="demo">
-<ul>
-<li>DNA Replication</li>
-<li>Protein Folding</li>
-<li>tRNA Mechanism</li>
-<li>CRISPR</li>
-</ul>
+<div id="demo" class="module hidden">
+    <p>DNA Replication | Protein Folding | tRNA | CRISPR</p>
 </div>
 
-<div id="guided" class="hidden">
-<ul>
-<li>PCR (Guided)</li>
-<li>Gel Electrophoresis (Guided)</li>
-<li>Rapid Diagnostic Test (Guided)</li>
-</ul>
+<div id="guided" class="module hidden">
+    <p>PCR | Gel Electrophoresis | RDT</p>
 </div>
 
-<div id="free" class="hidden">
-<ul>
-<li>PCR (Free Hand)</li>
-<li>Gel Electrophoresis (Free Hand)</li>
-<li>RDT (Free Hand)</li>
-</ul>
+<div id="free" class="module hidden">
+    <p>Free Lab Simulation Mode (Coming Soon)</p>
 </div>
 
-<a href="index.html" class="back-btn">Back</a>
-<a href="dna-replication-guided.html" class="btn">
-DNA Replication - Guided Simulation
-</a>
+<a href="index.html" class="back-btn">Back to Home</a>
+
 </body>
 </html>
