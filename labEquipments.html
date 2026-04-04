@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Lab Equipments</title>
+
+<style>
+body {
+    font-family: Arial;
+    background: #f5f5f5;
+    text-align: center;
+}
+
+/* SEARCH BAR */
+.search-box {
+    margin: 20px;
+}
+
+input {
+    padding: 10px;
+    width: 250px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* CATEGORY BUTTONS */
+.categories {
+    margin: 20px;
+}
+
+.cat-btn {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    background: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cat-btn:hover {
+    background: #45a049;
+}
+
+/* EQUIPMENT GRID */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* CARD */
+.card {
+    background: white;
+    margin: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+iframe {
+    width: 100%;
+    height: 200px;
+}
+</style>
+</head>
+
+<body>
+
+<h2>🧪 Lab Equipments</h2>
+
+<!-- 🔍 SEARCH -->
+<div class="search-box">
+    <input type="text" id="search" placeholder="Search equipment..." onkeyup="searchEquipments()">
+</div>
+
+<!-- 📂 CATEGORIES -->
+<div class="categories">
+    <button class="cat-btn" onclick="filterCategory('all')">All</button>
+    <button class="cat-btn" onclick="filterCategory('microscope')">Microscopes</button>
+    <button class="cat-btn" onclick="filterCategory('glassware')">Glassware</button>
+</div>
+
+<!-- 🧪 EQUIPMENTS -->
+<div class="container" id="equipmentContainer">
+
+    <!-- 🔬 MICROSCOPE -->
+    <div class="card microscope">
+        <h3>Microscope</h3>
+        <!-- PASTE YOUR EMBED HERE -->
+        <iframe src="https://sketchfab.com/models/ed55d847c5dd4daa94af08773170b9fe/embed"></iframe>
+    </div>
+
+    <!-- 🧪 BEAKERS -->
+    <div class="card glassware">
+        <h3>Beakers & Glassware</h3>
+        <!-- PASTE YOUR EMBED HERE -->
+        <iframe src="https://sketchfab.com/models/b8594f7dc7e8442dbaaae7a11da4a962/embed"></iframe>
+    </div>
+
+</div>
+
+<script>
+
+/* 🔍 SEARCH FUNCTION */
+function searchEquipments() {
+    let input = document.getElementById("search").value.toLowerCase();
+    let cards = document.getElementsByClassName("card");
+
+    for (let i = 0; i < cards.length; i++) {
+        let title = cards[i].innerText.toLowerCase();
+        cards[i].style.display = title.includes(input) ? "block" : "none";
+    }
+}
+
+/* 📂 CATEGORY FILTER */
+function filterCategory(category) {
+    let cards = document.getElementsByClassName("card");
+
+    for (let i = 0; i < cards.length; i++) {
+        if (category === "all") {
+            cards[i].style.display = "block";
+        } else {
+            cards[i].style.display =
+                cards[i].classList.contains(category) ? "block" : "none";
+        }
+    }
+}
+
+</script>
+
+</body>
+</html>
