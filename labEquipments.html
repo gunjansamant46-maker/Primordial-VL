@@ -57,6 +57,7 @@ input {
     border-radius: 10px;
     width: 300px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    cursor: pointer;
 }
 
 iframe {
@@ -78,7 +79,7 @@ iframe {
 <!-- 📂 CATEGORIES -->
 <div class="categories">
     <button class="cat-btn" onclick="filterCategory('all')">All</button>
-    <button class="cat-btn" onclick="filterCategory('labequipments')">LabEquipments</button>
+    <button class="cat-btn" onclick="filterCategory('labequipments')">Lab Equipments</button>
     <button class="cat-btn" onclick="filterCategory('glassware')">Glassware</button>
 </div>
 
@@ -86,21 +87,26 @@ iframe {
 <div class="container" id="equipmentContainer">
 
     <!-- 🔬 MICROSCOPE -->
-    <div class="card labEquipments">
+    <div class="card labequipments">
         <h3>Microscope</h3>
-        <!-- PASTE YOUR EMBED HERE -->
         <iframe src="https://sketchfab.com/models/ed55d847c5dd4daa94af08773170b9fe/embed"></iframe>
-        <h3>pH tester</h3>
-        <iframe src="https://sketchfab.com/models/313453cae6c4469c878aee5ee70239bd/embed"></iframe>
-        <h3>Petri dish</h3>
-        <iframe src="https://sketchfab.com/models/a760d477c4564ac98d38ce11c5be8215/embed"></iframe>
-            
     </div>
 
-    <!-- 🧪 BEAKERS -->
+    <!-- 🧪 pH TESTER -->
+    <div class="card labequipments">
+        <h3>pH Tester</h3>
+        <iframe src="https://sketchfab.com/models/313453cae6c4469c878aee5ee70239bd/embed"></iframe>
+    </div>
+
+    <!-- 🧫 PETRI DISH -->
+    <div class="card labequipments">
+        <h3>Petri Dish</h3>
+        <iframe src="https://sketchfab.com/models/a760d477c4564ac98d38ce11c5be8215/embed"></iframe>
+    </div>
+
+    <!-- 🧪 GLASSWARE -->
     <div class="card glassware">
         <h3>Beakers & Glassware</h3>
-        <!-- PASTE YOUR EMBED HERE -->
         <iframe src="https://sketchfab.com/models/b8594f7dc7e8442dbaaae7a11da4a962/embed"></iframe>
     </div>
 
