@@ -1,93 +1,25 @@
 body {
-    background: #0F172A;
-    color: #F8F5F0;
     font-family: Poppins, sans-serif;
     margin: 0;
     padding: 30px;
     text-align: center;
+    color: #F8F5F0;
+
+    /* BACKGROUND GIF */
+    position: relative;
 }
 
-h1 {
-    margin-bottom: 20px;
-}
-
-.main-buttons {
-    margin-top: 40px;
-}
-
-.btn {
-    display: inline-block;
-    margin: 15px;
-    padding: 12px 30px;
-    background: #0B1320;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-}
-
-.btn:hover {
-    background: #D4A017;
-    color: #0F172A;
-}
-
-.tab-buttons button {
-    margin: 10px;
-    padding: 10px 20px;
-    background: #0B1320;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-.tab-buttons button:hover {
-    background: #D4A017;
-    color: #0F172A;
-}
-
-.comparison-frame {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 40px;
-    flex-wrap: wrap;
-}
-
-.model-box {
-    background: #0B1320;
-    padding: 20px;
-    border-radius: 12px;
-    width: 45%;
-}
-
-.model-box iframe {
+/* BACKGROUND LAYER */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 400px;
-    border-radius: 10px;
-}
+    height: 100%;
 
-.single-frame {
-    margin-top: 40px;
-}
+    background: url('bg.gif') center/cover no-repeat;
 
-.full-width {
-    width: 70%;
-    margin: auto;
-}
-
-.module iframe {
-    width: 80%;
-    height: 500px;
-    border-radius: 12px;
-}
-
-.back-btn {
-    display: inline-block;
-    margin-top: 40px;
-    color: #D4A017;
-    text-decoration: none;
-}
-
-footer {
-    margin-top: 60px;
+    opacity: 0.25; /* adjust brightness */
+    z-index: -1;
 }
