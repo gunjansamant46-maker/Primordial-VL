@@ -5,13 +5,19 @@
 <title>Reagents & Stains</title>
 
 <style>
+
 body {
     font-family: Arial;
     background-image: url('IMG_4027.jpeg');
     background-size: cover;
-    background-position: no-repeat;
+    background-repeat: no-repeat;
     background-attachment: fixed;
     text-align: center;
+}
+
+/* HEADER */
+h2 {
+    color: #F8F5F0;
 }
 
 /* SEARCH */
@@ -23,7 +29,7 @@ input {
     padding: 10px;
     width: 250px;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: none;
 }
 
 /* BUTTONS */
@@ -57,16 +63,25 @@ input {
     background: white;
     margin: 15px;
     padding: 15px;
-    border-radius: 10px;
+    border-radius: 12px;
     width: 320px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     text-align: left;
     cursor: pointer;
-    transition: 0.2s;
+    transition: 0.3s;
 }
 
 .card:hover {
     transform: scale(1.03);
+}
+
+/* IMAGE */
+.reagent-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 /* DETAILS */
@@ -75,12 +90,13 @@ input {
     margin-top: 10px;
     font-size: 14px;
 }
+
 </style>
 </head>
 
 <body>
 
-<h2 style="color:#F8F5F0;">🧪 Reagents & Stains</h2>
+<h2>🧪 Reagents & Stains</h2>
 
 <!-- SEARCH -->
 <div class="search-box">
@@ -100,55 +116,60 @@ input {
 <!-- METHYLENE BLUE -->
 <div class="card stain" onclick="toggleDetails(this)">
 <h3>Methylene Blue</h3>
+<img src="images/methylene.jpg" class="reagent-img">
 <div class="details">
-<p><b>Purpose:</b> Used to stain animal cells, especially the nucleus, to make internal structures clearly visible.</p>
-<p><b>Principle:</b> A basic dye that binds to negatively charged DNA and RNA via electrostatic attraction.</p>
-<p><b>Result:</b> Nucleus appears deep blue, cytoplasm appears light blue.</p>
-<p><b>Precaution:</b> Avoid over-staining as it may obscure details.</p>
+<p><b>Purpose:</b> Stains nucleus in cells</p>
+<p><b>Principle:</b> Binds to negatively charged DNA</p>
+<p><b>Result:</b> Nucleus appears blue</p>
+<p><b>Precaution:</b> Avoid over-staining</p>
 </div>
 </div>
 
 <!-- CRYSTAL VIOLET -->
 <div class="card stain" onclick="toggleDetails(this)">
 <h3>Crystal Violet</h3>
+<img src="images/gram-positive.jpg" class="reagent-img">
 <div class="details">
-<p><b>Purpose:</b> Primary stain used in Gram staining.</p>
-<p><b>Principle:</b> Forms a complex with iodine and is retained in Gram-positive bacteria.</p>
-<p><b>Result:</b> Gram-positive bacteria appear purple.</p>
-<p><b>Precaution:</b> Follow proper washing steps for accurate results.</p>
+<p><b>Purpose:</b> Primary stain in Gram staining</p>
+<p><b>Principle:</b> Retained in thick cell wall</p>
+<p><b>Result:</b> Gram-positive bacteria appear purple</p>
+<p><b>Precaution:</b> Wash properly</p>
 </div>
 </div>
 
 <!-- SAFRANIN -->
 <div class="card stain" onclick="toggleDetails(this)">
 <h3>Safranin</h3>
+<img src="images/gram-negative.jpg" class="reagent-img">
 <div class="details">
-<p><b>Purpose:</b> Counterstain used in Gram staining.</p>
-<p><b>Principle:</b> Stains cells that do not retain crystal violet.</p>
-<p><b>Result:</b> Gram-negative bacteria appear pink/red.</p>
-<p><b>Precaution:</b> Avoid excessive staining.</p>
+<p><b>Purpose:</b> Counterstain</p>
+<p><b>Principle:</b> Stains cells that lose primary stain</p>
+<p><b>Result:</b> Gram-negative bacteria appear pink/red</p>
+<p><b>Precaution:</b> Avoid excess staining</p>
 </div>
 </div>
 
 <!-- HCL -->
 <div class="card reagent" onclick="toggleDetails(this)">
 <h3>Hydrochloric Acid (HCl)</h3>
+<img src="images/hcl.jpg" class="reagent-img">
 <div class="details">
-<p><b>Purpose:</b> Used to acidify solutions and in hydrolysis reactions.</p>
-<p><b>Principle:</b> Releases hydrogen ions (H⁺), increasing acidity.</p>
-<p><b>Result:</b> Solution becomes highly acidic (low pH).</p>
-<p><b>Precaution:</b> Highly corrosive; handle with care.</p>
+<p><b>Purpose:</b> Acidification</p>
+<p><b>Principle:</b> Releases H⁺ ions</p>
+<p><b>Result:</b> Low pH</p>
+<p><b>Precaution:</b> Corrosive</p>
 </div>
 </div>
 
 <!-- NAOH -->
 <div class="card reagent" onclick="toggleDetails(this)">
 <h3>Sodium Hydroxide (NaOH)</h3>
+<img src="images/naoh.jpg" class="reagent-img">
 <div class="details">
-<p><b>Purpose:</b> Used to create basic solutions and neutralize acids.</p>
-<p><b>Principle:</b> Releases hydroxide ions (OH⁻), increasing alkalinity.</p>
-<p><b>Result:</b> Solution becomes strongly basic (high pH).</p>
-<p><b>Precaution:</b> Can cause burns; handle carefully.</p>
+<p><b>Purpose:</b> Base formation</p>
+<p><b>Principle:</b> Releases OH⁻ ions</p>
+<p><b>Result:</b> High pH</p>
+<p><b>Precaution:</b> Can cause burns</p>
 </div>
 </div>
 
