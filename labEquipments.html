@@ -9,9 +9,16 @@ body {
     font-family: Arial;
     background-image: url('IMG_4027.jpeg');
     background-size: cover;
-    background-position: no-repeat;
-    background-attachment: fixed;;
+    background-position: center;
+    background-attachment: fixed;
     text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* TITLE */
+h2 {
+    padding-top: 20px;
 }
 
 /* SEARCH BAR */
@@ -39,6 +46,7 @@ input {
     color: white;
     border-radius: 5px;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 .cat-btn:hover {
@@ -50,29 +58,40 @@ input {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding-bottom: 40px;
 }
 
 /* CARD */
 .card {
-    background: white;
+    background: rgba(255,255,255,0.95);
     margin: 15px;
-    padding: 10px;
-    border-radius: 10px;
-    width: 300px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    cursor: pointer;
+    padding: 15px;
+    border-radius: 12px;
+    width: 320px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+.card h3 {
+    margin-bottom: 10px;
 }
 
 iframe {
     width: 100%;
-    height: 200px;
+    height: 220px;
+    border-radius: 8px;
+    border: none;
 }
 </style>
 </head>
 
 <body>
 
-<h2 style="color:#F8F5F0;">🧪 Lab Equipments</h2>
+<h2 style="color:#F8F5F0;">🧪 Virtual Lab Equipments</h2>
 
 <!-- 🔍 SEARCH -->
 <div class="search-box">
@@ -84,6 +103,7 @@ iframe {
     <button class="cat-btn" onclick="filterCategory('all')">All</button>
     <button class="cat-btn" onclick="filterCategory('labequipments')">Lab Equipments</button>
     <button class="cat-btn" onclick="filterCategory('glassware')">Glassware</button>
+    <button class="cat-btn" onclick="filterCategory('physics')">Physics</button>
 </div>
 
 <!-- 🧪 EQUIPMENTS -->
@@ -91,26 +111,50 @@ iframe {
 
     <!-- 🔬 MICROSCOPE -->
     <div class="card labequipments">
-        <h3>Microscope</h3>
-        <iframe src="https://sketchfab.com/models/ed55d847c5dd4daa94af08773170b9fe/embed"></iframe>
+        <h3>🔬 Microscope</h3>
+        <iframe src="https://sketchfab.com/models/ed55d847c5dd4daa94af08773170b9fe/embed"
+        allowfullscreen></iframe>
     </div>
 
     <!-- 🧪 pH TESTER -->
     <div class="card labequipments">
-        <h3>pH Tester</h3>
-        <iframe src="https://sketchfab.com/models/313453cae6c4469c878aee5ee70239bd/embed"></iframe>
+        <h3>🧪 pH Tester</h3>
+        <iframe src="https://sketchfab.com/models/313453cae6c4469c878aee5ee70239bd/embed"
+        allowfullscreen></iframe>
     </div>
 
     <!-- 🧫 PETRI DISH -->
     <div class="card labequipments">
-        <h3>Petri Dish</h3>
-        <iframe src="https://sketchfab.com/models/a760d477c4564ac98d38ce11c5be8215/embed"></iframe>
+        <h3>🧫 Petri Dish</h3>
+        <iframe src="https://sketchfab.com/models/a760d477c4564ac98d38ce11c5be8215/embed"
+        allowfullscreen></iframe>
     </div>
 
     <!-- 🧪 GLASSWARE -->
     <div class="card glassware">
-        <h3>Beakers & Glassware</h3>
-        <iframe src="https://sketchfab.com/models/b8594f7dc7e8442dbaaae7a11da4a962/embed"></iframe>
+        <h3>⚗️ Beakers & Glassware</h3>
+        <iframe src="https://sketchfab.com/models/b8594f7dc7e8442dbaaae7a11da4a962/embed"
+        allowfullscreen></iframe>
+    </div>
+
+    <!-- 📏 VERNIER CALIPER -->
+    <div class="card physics">
+        <h3>📏 Vernier Caliper</h3>
+
+        <iframe
+            title="Vernier Caliper"
+            frameborder="0"
+            allowfullscreen
+            mozallowfullscreen="true"
+            webkitallowfullscreen="true"
+            allow="autoplay; fullscreen; xr-spatial-tracking"
+            xr-spatial-tracking
+            execution-while-out-of-viewport
+            execution-while-not-rendered
+            web-share
+            src="https://sketchfab.com/models/955e210ad22c4b95b37a993b3352b9d8/embed">
+        </iframe>
+
     </div>
 
 </div>
@@ -124,25 +168,39 @@ function searchEquipments() {
 
     for (let i = 0; i < cards.length; i++) {
         let title = cards[i].innerText.toLowerCase();
-        cards[i].style.display = title.includes(input) ? "block" : "none";
+
+        if (title.includes(input)) {
+            cards[i].style.display = "block";
+        } else {
+            cards[i].style.display = "none";
+        }
     }
 }
 
 /* 📂 CATEGORY FILTER */
 function filterCategory(category) {
+
     let cards = document.getElementsByClassName("card");
 
     for (let i = 0; i < cards.length; i++) {
+
         if (category === "all") {
             cards[i].style.display = "block";
-        } else {
-            cards[i].style.display =
-                cards[i].classList.contains(category) ? "block" : "none";
+        }
+
+        else if (cards[i].classList.contains(category)) {
+            cards[i].style.display = "block";
+        }
+
+        else {
+            cards[i].style.display = "none";
         }
     }
 }
 
 </script>
+
 <script src="chatbot.js"></script>
+
 </body>
 </html>
