@@ -26,6 +26,7 @@ body{
 h2{
     color:#F8F5F0;
     padding-top:20px;
+    font-size:32px;
 }
 
 /* SEARCH */
@@ -57,6 +58,8 @@ input{
     border-radius:5px;
     cursor:pointer;
     transition:0.3s;
+    font-size:14px;
+    font-weight:bold;
 }
 
 .cat-btn:hover{
@@ -69,6 +72,8 @@ input{
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
+    align-items:flex-start;
+    gap:10px;
     padding-bottom:40px;
 }
 
@@ -80,7 +85,7 @@ input{
     padding:15px;
     border-radius:12px;
     width:320px;
-    height:500px;
+    min-height:520px;
     max-width:90%;
     box-shadow:0 4px 12px rgba(0,0,0,0.2);
     text-align:left;
@@ -93,6 +98,15 @@ input{
 
 .card:hover{
     transform:scale(1.03);
+}
+
+/* TITLE */
+
+.card h3{
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:10px;
+    text-align:center;
 }
 
 /* IMAGE */
@@ -110,11 +124,38 @@ input{
 .details{
     display:none;
     margin-top:10px;
-    font-size:14px;
-    line-height:1.6;
-
+    font-size:15px;
+    line-height:1.8;
     overflow-y:auto;
-    flex-grow:1;
+}
+
+/* HEADINGS */
+
+.details b{
+    font-size:16px;
+    font-weight:bold;
+    color:#222;
+}
+
+/* NORMAL TEXT */
+
+.details p,
+.details li{
+    font-size:14px;
+    font-weight:normal;
+    color:#444;
+}
+
+/* BULLETS */
+
+ul{
+    padding-left:22px;
+    margin-top:5px;
+    margin-bottom:10px;
+}
+
+li{
+    margin-bottom:6px;
 }
 
 /* SCROLLBAR */
@@ -126,12 +167,6 @@ input{
 .details::-webkit-scrollbar-thumb{
     background:#999;
     border-radius:10px;
-}
-
-/* LIST */
-
-ul{
-    padding-left:20px;
 }
 
 </style>
@@ -154,7 +189,7 @@ onkeyup="searchReagents()">
 
 </div>
 
-<!-- FILTER BUTTONS -->
+<!-- BUTTONS -->
 
 <div class="categories">
 
@@ -182,73 +217,7 @@ Reagents
 
 <div class="container">
 
-<!-- METHYLENE BLUE -->
-
-<div class="card stain"
-onclick="toggleDetails(this)">
-
-<h3>Methylene Blue</h3>
-
-<img
-src="methyleneblue.jpg.png"
-class="reagent-img">
-
-<div class="details">
-
-<p><b>Purpose:</b>
-Stains nucleus in cells
-</p>
-
-<p><b>Principle:</b>
-Binds to negatively charged DNA
-</p>
-
-<p><b>Result:</b>
-Nucleus appears blue
-</p>
-
-<p><b>Precaution:</b>
-Avoid over-staining
-</p>
-
-</div>
-
-</div>
-
-<!-- CRYSTAL VIOLET -->
-
-<div class="card stain"
-onclick="toggleDetails(this)">
-
-<h3>Crystal Violet</h3>
-
-<img
-src="Bacillus_ Large gram positive rod-shaped bacteria_.jpg"
-class="reagent-img">
-
-<div class="details">
-
-<p><b>Purpose:</b>
-Primary stain in Gram staining
-</p>
-
-<p><b>Principle:</b>
-Retained in thick cell wall
-</p>
-
-<p><b>Result:</b>
-Gram-positive bacteria appear purple
-</p>
-
-<p><b>Precaution:</b>
-Wash properly
-</p>
-
-</div>
-
-</div>
-
-<!-- LITMUS PAPER -->
+<!-- LITMUS -->
 
 <div class="card stain"
 onclick="toggleDetails(this)">
@@ -261,28 +230,35 @@ class="reagent-img">
 
 <div class="details">
 
-<p><b>Purpose:</b>
+<p>
+<b>Purpose:</b><br>
 To identify whether a substance is acidic or basic.
 </p>
 
-<p><b>Principle:</b></p>
+<p>
+<b>Principle:</b>
+</p>
 
 <ul>
 <li>Acid → blue litmus turns red</li>
 <li>Base → red litmus turns blue</li>
 </ul>
 
-<p><b>Result:</b></p>
+<p>
+<b>Result:</b>
+</p>
 
 <ul>
 <li>Red = acidic</li>
 <li>Blue = basic</li>
 </ul>
 
-<p><b>Precaution:</b></p>
+<p>
+<b>Precaution:</b>
+</p>
 
 <ul>
-<li>Use clean droppers/glass rods</li>
+<li>Use clean droppers or glass rods</li>
 <li>Avoid contamination</li>
 <li>Do not reuse contaminated litmus</li>
 <li>Observe color immediately</li>
@@ -305,15 +281,19 @@ class="reagent-img">
 
 <div class="details">
 
-<p><b>Purpose:</b>
+<p>
+<b>Purpose:</b><br>
 To determine approximate pH of a solution.
 </p>
 
-<p><b>Principle:</b>
+<p>
+<b>Principle:</b><br>
 Contains multiple dyes that show different colors at different pH levels.
 </p>
 
-<p><b>Result:</b></p>
+<p>
+<b>Result:</b>
+</p>
 
 <ul>
 <li>Red/Orange → acidic</li>
@@ -321,12 +301,14 @@ Contains multiple dyes that show different colors at different pH levels.
 <li>Blue/Purple → basic</li>
 </ul>
 
-<p><b>Precaution:</b></p>
+<p>
+<b>Precaution:</b>
+</p>
 
 <ul>
 <li>Use small quantities</li>
 <li>Use clean apparatus</li>
-<li>Compare quickly with pH chart</li>
+<li>Compare with pH chart quickly</li>
 <li>Avoid accidental mixing</li>
 </ul>
 
@@ -334,99 +316,74 @@ Contains multiple dyes that show different colors at different pH levels.
 
 </div>
 
-<!-- SAFRANIN -->
+<!-- METHYLENE BLUE -->
 
 <div class="card stain"
 onclick="toggleDetails(this)">
 
-<h3>Safranin</h3>
+<h3>Methylene Blue</h3>
 
 <img
-src="safranin.jpg"
+src="methyleneblue.jpg.png"
 class="reagent-img">
 
 <div class="details">
 
-<p><b>Purpose:</b>
-Counterstain
+<p>
+<b>Purpose:</b><br>
+Stains nucleus in cells
 </p>
 
-<p><b>Principle:</b>
-Stains cells that lose primary stain
+<p>
+<b>Principle:</b><br>
+Binds to negatively charged DNA
 </p>
 
-<p><b>Result:</b>
-Gram-negative bacteria appear pink/red
+<p>
+<b>Result:</b><br>
+Nucleus appears blue
 </p>
 
-<p><b>Precaution:</b>
-Avoid excess staining
+<p>
+<b>Precaution:</b><br>
+Avoid over-staining
 </p>
 
 </div>
 
 </div>
 
-<!-- HCL -->
+<!-- CRYSTAL VIOLET -->
 
-<div class="card reagent"
+<div class="card stain"
 onclick="toggleDetails(this)">
 
-<h3>Hydrochloric Acid (HCl)</h3>
+<h3>Crystal Violet</h3>
 
 <img
-src="hcl.jpg"
+src="Bacillus_ Large gram positive rod-shaped bacteria_.jpg"
 class="reagent-img">
 
 <div class="details">
 
-<p><b>Purpose:</b>
-Acidification
+<p>
+<b>Purpose:</b><br>
+Primary stain in Gram staining
 </p>
 
-<p><b>Principle:</b>
-Releases H⁺ ions
+<p>
+<b>Principle:</b><br>
+Retained in thick cell wall
 </p>
 
-<p><b>Result:</b>
-Low pH
+<p>
+<b>Result:</b><br>
+Gram-positive bacteria appear purple
 </p>
 
-<p><b>Precaution:</b>
-Corrosive chemical
-</p>
-
-</div>
-
-</div>
-
-<!-- NAOH -->
-
-<div class="card reagent"
-onclick="toggleDetails(this)">
-
-<h3>Sodium Hydroxide (NaOH)</h3>
-
-<img
-src="naoh.jpg"
-class="reagent-img">
-
-<div class="details">
-
-<p><b>Purpose:</b>
-Base formation
-</p>
-
-<p><b>Principle:</b>
-Releases OH⁻ ions
-</p>
-
-<p><b>Result:</b>
-High pH
-</p>
-
-<p><b>Precaution:</b>
-Can cause burns
+<p>
+<b>Precaution:</b><br>
+Wash properly
 </p>
 
 </div>
@@ -434,12 +391,10 @@ Can cause burns
 </div>
 
 </div>
-
-<!-- JAVASCRIPT -->
 
 <script>
 
-/* SEARCH FUNCTION */
+/* SEARCH */
 
 function searchReagents(){
 
@@ -462,7 +417,7 @@ function searchReagents(){
     }
 }
 
-/* FILTER FUNCTION */
+/* FILTER */
 
 function filterCategory(category){
 
@@ -491,7 +446,7 @@ function filterCategory(category){
     }
 }
 
-/* TOGGLE DETAILS */
+/* TOGGLE */
 
 function toggleDetails(card){
 
