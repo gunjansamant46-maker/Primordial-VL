@@ -1,97 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Reagents & Stains</title>
 
 <style>
 
-body {
-    font-family: Arial;
+body{
+    font-family: Arial, sans-serif;
     background-image: url('IMG_4027.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    text-align: center;
+    margin:0;
+    padding:0;
+    text-align:center;
 }
 
 /* HEADER */
-h2 {
-    color: #F8F5F0;
+
+h2{
+    color:#F8F5F0;
+    padding-top:20px;
 }
 
 /* SEARCH */
-.search-box {
-    margin: 20px;
+
+.search-box{
+    margin:20px;
 }
 
-input {
-    padding: 10px;
-    width: 250px;
-    border-radius: 5px;
-    border: none;
+input{
+    padding:10px;
+    width:250px;
+    border:none;
+    border-radius:6px;
+    font-size:15px;
 }
 
 /* BUTTONS */
-.categories {
-    margin: 20px;
+
+.categories{
+    margin:20px;
 }
 
-.cat-btn {
-    padding: 10px 15px;
-    margin: 5px;
-    border: none;
-    background: #673AB7;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
+.cat-btn{
+    padding:10px 15px;
+    margin:5px;
+    border:none;
+    background:#673AB7;
+    color:white;
+    border-radius:5px;
+    cursor:pointer;
+    transition:0.3s;
 }
 
-.cat-btn:hover {
-    background: #5E35B1;
+.cat-btn:hover{
+    background:#5E35B1;
 }
 
 /* GRID */
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+
+.container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    padding-bottom:40px;
 }
 
 /* CARD */
-.card {
-    background: white;
-    margin: 15px;
-    padding: 15px;
-    border-radius: 12px;
-    width: 320px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    text-align: left;
-    cursor: pointer;
-    transition: 0.3s;
+
+.card{
+    background:white;
+    margin:15px;
+    padding:15px;
+    border-radius:12px;
+    width:320px;
+    max-width:90%;
+    box-shadow:0 4px 12px rgba(0,0,0,0.2);
+    text-align:left;
+    cursor:pointer;
+    transition:0.3s;
 }
 
-.card:hover {
-    transform: scale(1.03);
+.card:hover{
+    transform:scale(1.03);
 }
 
 /* IMAGE */
-.reagent-img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 10px;
+
+.reagent-img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-bottom:10px;
 }
 
 /* DETAILS */
-.details {
-    display: none;
-    margin-top: 10px;
-    font-size: 14px;
+
+.details{
+    display:none;
+    margin-top:10px;
+    font-size:14px;
+    line-height:1.6;
+}
+
+ul{
+    padding-left:20px;
 }
 
 </style>
+
 </head>
 
 <body>
@@ -99,163 +123,391 @@ input {
 <h2>🧪 Reagents & Stains</h2>
 
 <!-- SEARCH -->
+
 <div class="search-box">
-    <input type="text" id="search" placeholder="Search reagent..." onkeyup="searchReagents()">
+
+<input
+type="text"
+id="search"
+placeholder="Search reagent..."
+onkeyup="searchReagents()">
+
 </div>
 
-<!-- FILTER -->
+<!-- FILTER BUTTONS -->
+
 <div class="categories">
-    <button class="cat-btn" onclick="filterCategory('all')">All</button>
-    <button class="cat-btn" onclick="filterCategory('stain')">Stains</button>
-    <button class="cat-btn" onclick="filterCategory('reagent')">Reagents</button>
+
+<button
+class="cat-btn"
+onclick="filterCategory('all')">
+All
+</button>
+
+<button
+class="cat-btn"
+onclick="filterCategory('stain')">
+Stains
+</button>
+
+<button
+class="cat-btn"
+onclick="filterCategory('reagent')">
+Reagents
+</button>
+
 </div>
 
-<!-- CONTENT -->
+<!-- CONTAINER -->
+
 <div class="container">
 
 <!-- METHYLENE BLUE -->
-<div class="card stain" onclick="toggleDetails(this)">
+
+<div class="card stain"
+onclick="toggleDetails(this)">
+
 <h3>Methylene Blue</h3>
-<img src="methyleneblue.jpg.png" class="reagent-img">
+
+<img
+src="methyleneblue.jpg.png"
+class="reagent-img">
+
 <div class="details">
-<p><b>Purpose:</b> Stains nucleus in cells</p>
-<p><b>Principle:</b> Binds to negatively charged DNA</p>
-<p><b>Result:</b> Nucleus appears blue</p>
-<p><b>Precaution:</b> Avoid over-staining</p>
+
+<p><b>Purpose:</b>
+Stains nucleus in cells
+</p>
+
+<p><b>Principle:</b>
+Binds to negatively charged DNA
+</p>
+
+<p><b>Result:</b>
+Nucleus appears blue
+</p>
+
+<p><b>Precaution:</b>
+Avoid over-staining
+</p>
+
 </div>
+
 </div>
 
 <!-- CRYSTAL VIOLET -->
-<div class="card stain" onclick="toggleDetails(this)">
+
+<div class="card stain"
+onclick="toggleDetails(this)">
+
 <h3>Crystal Violet</h3>
-<img src="Bacillus_ Large gram positive rod-shaped bacteria_.jpg" class="reagent-img">
+
+<img
+src="Bacillus_ Large gram positive rod-shaped bacteria_.jpg"
+class="reagent-img">
+
 <div class="details">
-<p><b>Purpose:</b> Primary stain in Gram staining</p>
-<p><b>Principle:</b> Retained in thick cell wall</p>
-<p><b>Result:</b> Gram-positive bacteria appear purple</p>
-<p><b>Precaution:</b> Wash properly</p>
+
+<p><b>Purpose:</b>
+Primary stain in Gram staining
+</p>
+
+<p><b>Principle:</b>
+Retained in thick cell wall
+</p>
+
+<p><b>Result:</b>
+Gram-positive bacteria appear purple
+</p>
+
+<p><b>Precaution:</b>
+Wash properly
+</p>
+
 </div>
+
 </div>
 
+<!-- LITMUS PAPER -->
 
+<div class="card stain"
+onclick="toggleDetails(this)">
 
+<h3>Litmus Paper</h3>
 
-    
-<div class="card stain" onclick="toggleDetails(this)">
-<h3>litmus paper</h3>
-<img src="Litmus.jpg" class="reagent-img">
+<img
+src="Litmus.jpg"
+class="reagent-img">
+
 <div class="details">
-<p><b>Purpose:</bT> To identify whether a substance is acidic or basic.</p>
-<p><b>Principle:</b> Litmus changes color depending on the pH of the solution.
 
-* Acid → blue litmus turns red
-* Base → red litmus turns blue</p>
-<p><b>Result:</b>Color change indicates the nature of the solution:
+<p><b>Purpose:</b>
+To identify whether a substance is acidic or basic.
+</p>
 
-* Red = acidic
-* Blue = basic</p>
-<p><b>Precaution:</b>* Use clean droppers/glass rods
-* Do not dip used litmus back into solution
-* Avoid contamination
-* Observe color immediately</p>
+<p><b>Principle:</b></p>
+
+<ul>
+<li>Acid → blue litmus turns red</li>
+<li>Base → red litmus turns blue</li>
+</ul>
+
+<p><b>Result:</b></p>
+
+<ul>
+<li>Red = acidic</li>
+<li>Blue = basic</li>
+</ul>
+
+<p><b>Precaution:</b></p>
+
+<ul>
+<li>Use clean droppers/glass rods</li>
+<li>Avoid contamination</li>
+<li>Do not reuse contaminated litmus</li>
+<li>Observe color immediately</li>
+</ul>
+
 </div>
+
 </div>
 
+<!-- UNIVERSAL INDICATOR -->
 
+<div class="card stain"
+onclick="toggleDetails(this)">
 
+<h3>Universal pH Indicator</h3>
 
-   <div class="card stain" onclick="toggleDetails(this)">
-        <h3>Universal pH Indicator</h3>
-        <img src="Uni indicator.jpg" class="reagent-img">
+<img
+src="Uni indicator.jpg"
+class="reagent-img">
+
 <div class="details">
-<p><b>Purpose:</b> To determine the approximate pH value of a solution.</p>
-<p><b>Principle:</b> The indicator contains multiple dyes that show different colors at different pH levels.</p>
-<p><b>Result:</b> Different colors represent different pH ranges:
 
-* Red/Orange → acidic
-* Green → neutral
-* Blue/Purple → basic</p>
-<p><b>Precaution:</b> * Use small amounts of solution
-* Compare color quickly with pH chart
-* Use clean apparatus
-* Avoid mixing chemicals accidentally</p>
+<p><b>Purpose:</b>
+To determine approximate pH of a solution.
+</p>
+
+<p><b>Principle:</b>
+Contains multiple dyes that show different colors at different pH levels.
+</p>
+
+<p><b>Result:</b></p>
+
+<ul>
+<li>Red/Orange → acidic</li>
+<li>Green → neutral</li>
+<li>Blue/Purple → basic</li>
+</ul>
+
+<p><b>Precaution:</b></p>
+
+<ul>
+<li>Use small quantities</li>
+<li>Use clean apparatus</li>
+<li>Compare quickly with pH chart</li>
+<li>Avoid accidental mixing</li>
+</ul>
+
 </div>
+
 </div>
-    
 
 <!-- SAFRANIN -->
-<div class="card stain" onclick="toggleDetails(this)">
+
+<div class="card stain"
+onclick="toggleDetails(this)">
+
 <h3>Safranin</h3>
-<img src="safranin.jpg" class="reagent-img">
+
+<img
+src="safranin.jpg"
+class="reagent-img">
+
 <div class="details">
-<p><b>Purpose:</b> Counterstain</p>
-<p><b>Principle:</b> Stains cells that lose primary stain</p>
-<p><b>Result:</b> Gram-negative bacteria appear pink/red</p>
-<p><b>Precaution:</b> Avoid excess staining</p>
+
+<p><b>Purpose:</b>
+Counterstain
+</p>
+
+<p><b>Principle:</b>
+Stains cells that lose primary stain
+</p>
+
+<p><b>Result:</b>
+Gram-negative bacteria appear pink/red
+</p>
+
+<p><b>Precaution:</b>
+Avoid excess staining
+</p>
+
 </div>
+
 </div>
 
 <!-- HCL -->
-<div class="card reagent" onclick="toggleDetails(this)">
+
+<div class="card reagent"
+onclick="toggleDetails(this)">
+
 <h3>Hydrochloric Acid (HCl)</h3>
 
+<img
+src="hcl.jpg"
+class="reagent-img">
+
 <div class="details">
-<p><b>Purpose:</b> Acidification</p>
-<p><b>Principle:</b> Releases H⁺ ions</p>
-<p><b>Result:</b> Low pH</p>
-<p><b>Precaution:</b> Corrosive</p>
+
+<p><b>Purpose:</b>
+Acidification
+</p>
+
+<p><b>Principle:</b>
+Releases H⁺ ions
+</p>
+
+<p><b>Result:</b>
+Low pH
+</p>
+
+<p><b>Precaution:</b>
+Corrosive chemical
+</p>
+
 </div>
+
 </div>
 
 <!-- NAOH -->
-<div class="card reagent" onclick="toggleDetails(this)">
+
+<div class="card reagent"
+onclick="toggleDetails(this)">
+
 <h3>Sodium Hydroxide (NaOH)</h3>
 
+<img
+src="naoh.jpg"
+class="reagent-img">
+
 <div class="details">
-<p><b>Purpose:</b> Base formation</p>
-<p><b>Principle:</b> Releases OH⁻ ions</p>
-<p><b>Result:</b> High pH</p>
-<p><b>Precaution:</b> Can cause burns</p>
-</div>
+
+<p><b>Purpose:</b>
+Base formation
+</p>
+
+<p><b>Principle:</b>
+Releases OH⁻ ions
+</p>
+
+<p><b>Result:</b>
+High pH
+</p>
+
+<p><b>Precaution:</b>
+Can cause burns
+</p>
+
 </div>
 
 </div>
+
+</div>
+
+<!-- JAVASCRIPT -->
 
 <script>
 
-/* SEARCH */
-function searchReagents() {
-    let input = document.getElementById("search").value.toLowerCase();
-    let cards = document.getElementsByClassName("card");
+/* SEARCH FUNCTION */
 
-    for (let i = 0; i < cards.length; i++) {
-        let text = cards[i].innerText.toLowerCase();
-        cards[i].style.display = text.includes(input) ? "block" : "none";
+function searchReagents(){
+
+    let input =
+    document.getElementById("search")
+    .value.toLowerCase();
+
+    let cards =
+    document.getElementsByClassName("card");
+
+    for(let i=0;i<cards.length;i++){
+
+        let text =
+        cards[i].innerText.toLowerCase();
+
+        cards[i].style.display =
+        text.includes(input)
+        ? "block"
+        : "none";
     }
 }
 
-/* FILTER */
-function filterCategory(category) {
-    let cards = document.getElementsByClassName("card");
+/* FILTER FUNCTION */
 
-    for (let i = 0; i < cards.length; i++) {
-        if (category === "all") {
-            cards[i].style.display = "block";
-        } else {
+function filterCategory(category){
+
+    let cards =
+    document.getElementsByClassName("card");
+
+    for(let i=0;i<cards.length;i++){
+
+        if(category === "all"){
+
             cards[i].style.display =
-                cards[i].classList.contains(category) ? "block" : "none";
+            "block";
+        }
+
+        else{
+
+            cards[i].style.display =
+
+            cards[i]
+            .classList
+            .contains(category)
+
+            ? "block"
+            : "none";
         }
     }
 }
 
 /* TOGGLE DETAILS */
-function toggleDetails(card) {
-    let details = card.querySelector(".details");
+
+function toggleDetails(card){
+
+    let allDetails =
+    document.querySelectorAll(".details");
+
+    allDetails.forEach(detail => {
+
+        if(
+        detail !==
+        card.querySelector(".details")
+        ){
+            detail.style.display = "none";
+        }
+
+    });
+
+    let details =
+    card.querySelector(".details");
+
     details.style.display =
-        (details.style.display === "block") ? "none" : "block";
+
+    details.style.display === "block"
+
+    ? "none"
+
+    : "block";
 }
 
 </script>
 
 </body>
 </html>
+
+
+ 
+
+
+            
