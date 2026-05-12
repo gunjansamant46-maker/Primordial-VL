@@ -10,12 +10,16 @@
 
 <style>
 
+*{
+    box-sizing:border-box;
+}
+
 body{
-    font-family: Arial, sans-serif;
-    background-image: url('IMG_4027.jpeg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    font-family:Arial, sans-serif;
+    background-image:url('IMG_4027.jpeg');
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
     margin:0;
     padding:0;
     text-align:center;
@@ -27,6 +31,7 @@ h2{
     color:#F8F5F0;
     padding-top:20px;
     font-size:32px;
+    font-weight:bold;
 }
 
 /* SEARCH */
@@ -37,7 +42,7 @@ h2{
 
 input{
     padding:10px;
-    width:250px;
+    width:260px;
     border:none;
     border-radius:6px;
     font-size:15px;
@@ -73,7 +78,7 @@ input{
     flex-wrap:wrap;
     justify-content:center;
     align-items:flex-start;
-    gap:10px;
+    gap:20px;
     padding-bottom:40px;
 }
 
@@ -81,12 +86,10 @@ input{
 
 .card{
     background:white;
-    margin:15px;
+    width:320px;
+    height:540px;
     padding:15px;
     border-radius:12px;
-    width:320px;
-    min-height:520px;
-    max-width:90%;
     box-shadow:0 4px 12px rgba(0,0,0,0.2);
     text-align:left;
     cursor:pointer;
@@ -100,13 +103,13 @@ input{
     transform:scale(1.03);
 }
 
-/* TITLE */
+/* CARD TITLE */
 
 .card h3{
+    text-align:center;
     font-size:22px;
     font-weight:bold;
-    margin-bottom:10px;
-    text-align:center;
+    margin-bottom:12px;
 }
 
 /* IMAGE */
@@ -116,17 +119,16 @@ input{
     height:180px;
     object-fit:cover;
     border-radius:10px;
-    margin-bottom:10px;
+    margin-bottom:12px;
 }
 
 /* DETAILS */
 
 .details{
     display:none;
-    margin-top:10px;
-    font-size:15px;
-    line-height:1.8;
     overflow-y:auto;
+    flex-grow:1;
+    padding-right:5px;
 }
 
 /* HEADINGS */
@@ -137,24 +139,31 @@ input{
     color:#222;
 }
 
-/* NORMAL TEXT */
+/* CONTENT */
 
-.details p,
-.details li{
+.details p{
     font-size:14px;
     font-weight:normal;
     color:#444;
+    line-height:1.7;
+    margin-bottom:8px;
 }
 
-/* BULLETS */
+/* BULLET LIST */
 
-ul{
-    padding-left:22px;
+.details ul{
+    list-style-type:disc;
+    padding-left:25px;
     margin-top:5px;
     margin-bottom:10px;
 }
 
-li{
+.details li{
+    display:list-item;
+    font-size:14px;
+    font-weight:normal;
+    color:#444;
+    line-height:1.7;
     margin-bottom:6px;
 }
 
@@ -189,7 +198,7 @@ onkeyup="searchReagents()">
 
 </div>
 
-<!-- BUTTONS -->
+<!-- FILTER BUTTONS -->
 
 <div class="categories">
 
@@ -217,7 +226,81 @@ Reagents
 
 <div class="container">
 
-<!-- LITMUS -->
+<!-- METHYLENE BLUE -->
+
+<div class="card stain"
+onclick="toggleDetails(this)">
+
+<h3>Methylene Blue</h3>
+
+<img
+src="methyleneblue.jpg.png"
+class="reagent-img">
+
+<div class="details">
+
+<p>
+<b>Purpose:</b><br>
+Stains nucleus in cells
+</p>
+
+<p>
+<b>Principle:</b><br>
+Binds to negatively charged DNA
+</p>
+
+<p>
+<b>Result:</b><br>
+Nucleus appears blue
+</p>
+
+<p>
+<b>Precaution:</b><br>
+Avoid over-staining
+</p>
+
+</div>
+
+</div>
+
+<!-- CRYSTAL VIOLET -->
+
+<div class="card stain"
+onclick="toggleDetails(this)">
+
+<h3>Crystal Violet</h3>
+
+<img
+src="Bacillus_ Large gram positive rod-shaped bacteria_.jpg"
+class="reagent-img">
+
+<div class="details">
+
+<p>
+<b>Purpose:</b><br>
+Primary stain in Gram staining
+</p>
+
+<p>
+<b>Principle:</b><br>
+Retained in thick cell wall
+</p>
+
+<p>
+<b>Result:</b><br>
+Gram-positive bacteria appear purple
+</p>
+
+<p>
+<b>Precaution:</b><br>
+Wash properly
+</p>
+
+</div>
+
+</div>
+
+<!-- LITMUS PAPER -->
 
 <div class="card stain"
 onclick="toggleDetails(this)">
@@ -308,7 +391,7 @@ Contains multiple dyes that show different colors at different pH levels.
 <ul>
 <li>Use small quantities</li>
 <li>Use clean apparatus</li>
-<li>Compare with pH chart quickly</li>
+<li>Compare quickly with pH chart</li>
 <li>Avoid accidental mixing</li>
 </ul>
 
@@ -316,74 +399,103 @@ Contains multiple dyes that show different colors at different pH levels.
 
 </div>
 
-<!-- METHYLENE BLUE -->
+<!-- SAFRANIN -->
 
 <div class="card stain"
 onclick="toggleDetails(this)">
 
-<h3>Methylene Blue</h3>
+<h3>Safranin</h3>
 
 <img
-src="methyleneblue.jpg.png"
+src="safranin.jpg"
 class="reagent-img">
 
 <div class="details">
 
 <p>
 <b>Purpose:</b><br>
-Stains nucleus in cells
+Counterstain
 </p>
 
 <p>
 <b>Principle:</b><br>
-Binds to negatively charged DNA
+Stains cells that lose primary stain
 </p>
 
 <p>
 <b>Result:</b><br>
-Nucleus appears blue
+Gram-negative bacteria appear pink/red
 </p>
 
 <p>
 <b>Precaution:</b><br>
-Avoid over-staining
+Avoid excess staining
 </p>
 
 </div>
 
 </div>
 
-<!-- CRYSTAL VIOLET -->
+<!-- HCL -->
 
-<div class="card stain"
+<div class="card reagent"
 onclick="toggleDetails(this)">
 
-<h3>Crystal Violet</h3>
-
-<img
-src="Bacillus_ Large gram positive rod-shaped bacteria_.jpg"
-class="reagent-img">
+<h3>Hydrochloric Acid (HCl)</h3>
 
 <div class="details">
 
 <p>
 <b>Purpose:</b><br>
-Primary stain in Gram staining
+Acidification
 </p>
 
 <p>
 <b>Principle:</b><br>
-Retained in thick cell wall
+Releases H⁺ ions
 </p>
 
 <p>
 <b>Result:</b><br>
-Gram-positive bacteria appear purple
+Low pH
 </p>
 
 <p>
 <b>Precaution:</b><br>
-Wash properly
+Corrosive chemical
+</p>
+
+</div>
+
+</div>
+
+<!-- NAOH -->
+
+<div class="card reagent"
+onclick="toggleDetails(this)">
+
+<h3>Sodium Hydroxide (NaOH)</h3>
+
+<div class="details">
+
+<p>
+<b>Purpose:</b><br>
+Base formation
+</p>
+
+<p>
+<b>Principle:</b><br>
+Releases OH⁻ ions
+</p>
+
+<p>
+<b>Result:</b><br>
+High pH
+</p>
+
+<p>
+<b>Precaution:</b><br>
+Can cause burns
 </p>
 
 </div>
@@ -391,6 +503,8 @@ Wash properly
 </div>
 
 </div>
+
+<!-- JAVASCRIPT -->
 
 <script>
 
@@ -428,8 +542,7 @@ function filterCategory(category){
 
         if(category === "all"){
 
-            cards[i].style.display =
-            "flex";
+            cards[i].style.display = "flex";
         }
 
         else{
@@ -446,7 +559,7 @@ function filterCategory(category){
     }
 }
 
-/* TOGGLE */
+/* TOGGLE DETAILS */
 
 function toggleDetails(card){
 
@@ -479,4 +592,5 @@ function toggleDetails(card){
 </script>
 
 </body>
+
 </html>
