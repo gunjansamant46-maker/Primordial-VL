@@ -80,11 +80,15 @@ input{
     padding:15px;
     border-radius:12px;
     width:320px;
+    height:500px;
     max-width:90%;
     box-shadow:0 4px 12px rgba(0,0,0,0.2);
     text-align:left;
     cursor:pointer;
     transition:0.3s;
+
+    display:flex;
+    flex-direction:column;
 }
 
 .card:hover{
@@ -108,7 +112,23 @@ input{
     margin-top:10px;
     font-size:14px;
     line-height:1.6;
+
+    overflow-y:auto;
+    flex-grow:1;
 }
+
+/* SCROLLBAR */
+
+.details::-webkit-scrollbar{
+    width:6px;
+}
+
+.details::-webkit-scrollbar-thumb{
+    background:#999;
+    border-radius:10px;
+}
+
+/* LIST */
 
 ul{
     padding-left:20px;
@@ -437,7 +457,7 @@ function searchReagents(){
 
         cards[i].style.display =
         text.includes(input)
-        ? "block"
+        ? "flex"
         : "none";
     }
 }
@@ -454,7 +474,7 @@ function filterCategory(category){
         if(category === "all"){
 
             cards[i].style.display =
-            "block";
+            "flex";
         }
 
         else{
@@ -465,7 +485,7 @@ function filterCategory(category){
             .classList
             .contains(category)
 
-            ? "block"
+            ? "flex"
             : "none";
         }
     }
@@ -505,9 +525,3 @@ function toggleDetails(card){
 
 </body>
 </html>
-
-
- 
-
-
-            
