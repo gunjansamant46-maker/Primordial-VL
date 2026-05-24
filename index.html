@@ -1,22 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Eurica Virtual Lab</title>
 
 <style>
+
 body {
     font-family: Arial, sans-serif;
     text-align: center;
+
     background-image: url('146E4959-2D55-4B6C-9CCE-79ADE93EFAB4.gif');
     background-size: cover;
-    background-position: no-repeat;
+    background-repeat: no-repeat;
     background-attachment: fixed;
+    background-position: center;
+
+    color: white;
 }
 
 header {
-    margin-top: 40px;
+    margin-top: 50px;
+}
+
+h1 {
+    font-size: 50px;
+
+    text-shadow:
+        0 0 5px #ffffff,
+        0 0 10px #00ffcc,
+        0 0 20px #00ffcc;
+}
+
+.tagline {
+    font-size: 18px;
+
+    text-shadow:
+        0 0 5px #ffffff,
+        0 0 10px #00ffcc,
+        0 0 20px #00ffcc;
 }
 
 .main-buttons {
@@ -25,40 +50,189 @@ header {
 
 .btn {
     display: inline-block;
+
     padding: 12px 20px;
     margin: 10px;
-    background-color: #4CAF50;
+
+    background-color: rgba(76, 175, 80, 0.8);
+
     color: white;
+
     text-decoration: none;
-    border-radius: 6px;
+
+    border-radius: 8px;
+
+    transition: 0.3s;
 }
 
 .btn:hover {
     background-color: #45a049;
+    transform: scale(1.05);
 }
+
+.simulation-box {
+
+    margin-top: 60px;
+
+    background-color: rgba(0,0,0,0.5);
+
+    width: 60%;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 30px;
+
+    border-radius: 12px;
+}
+
+input {
+
+    padding: 12px;
+
+    width: 300px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+}
+
+button {
+
+    padding: 12px 20px;
+
+    margin-top: 15px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background-color: #00cc99;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #00aa88;
+}
+
+.result-box {
+
+    margin-top: 20px;
+
+    font-size: 18px;
+}
+
 </style>
+
 </head>
 
 <body>
 
 <header>
-    <h1 style="color:#F8F5F0;">Eurica Virtual Lab</h1>
-    <p style="color:#F8F5F0;"text-shadow: 
-        0 0 5px #ffffff,
-        0 0 10px #00ffcc,
-        0 0 20px #00ffcc,
-        0 0 40px #00ffcc;>Limitless learning,born from limited resources </p>
+
+    <h1>Eurica Virtual Lab</h1>
+
+    <p class="tagline">
+        Limitless learning, born from limited resources
+    </p>
+
 </header>
 
 <div class="main-buttons">
-    <a href="3dSimulations.html" class="btn">3d Simulations</a>
-       <a href="labEquipments.html" class="btn">Lab Equipments</a>
-    <a href="reagents.html" class="btn">Reagents</a>
+
+    <a href="3dSimulations.html" class="btn">
+        3D Simulations
+    </a>
+
+    <a href="labEquipments.html" class="btn">
+        Lab Equipments
+    </a>
+
+    <a href="reagents.html" class="btn">
+        Reagents
+    </a>
+
 </div>
 
-<footer>
-    <p></p>
-</footer>
+<!-- CENTRAL DOGMA SIMULATOR -->
+
+<div class="simulation-box">
+
+    <h2>Central Dogma Simulator</h2>
+
+    <p>
+        Enter a DNA sequence below
+    </p>
+
+    <input
+        type="text"
+        id="dnaInput"
+        placeholder="Example: ATGCGT"
+    >
+
+    <br>
+
+    <button onclick="runSimulation()">
+        Run Simulation
+    </button>
+
+    <div
+        class="result-box"
+        id="result"
+    >
+    </div>
+
+</div>
+
+<script>
+
+async function runSimulation() {
+
+    const dnaSequence =
+        document.getElementById("dnaInput").value;
+
+    const response = await fetch(
+        "http://127.0.0.1:8000/transcribe",
+        {
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify({
+                sequence: dnaSequence
+            })
+        }
+    );
+
+    const data = await response.json();
+
+    document.getElementById("result").innerHTML = `
+
+        <p>
+            <strong>DNA:</strong>
+            ${data.DNA}
+        </p>
+
+        <p>
+            <strong>mRNA:</strong>
+            ${data.mRNA}
+        </p>
+
+    `;
+}
+
+</script>
+
 <script src="chatbot.js"></script>
+
 </body>
 </html>
